@@ -1,5 +1,6 @@
 from sense_hat import SenseHat
 import time
+import random
 
 sense = SenseHat()
 
@@ -29,10 +30,14 @@ def sad():
     sense.clear()
     time.sleep(1.5)
 
-sense.show_message("1+2=?")
+r = random.randint(0, 10)  
+l = random.randint(0, 10)
+correct = r+l
+sense.show_message(str(r) + "+" + str(l) + "=?")
 ans = input()
 n = int(ans)
-if(n == 3):
+if(n == correct):
     smile()
 else:
     sad()
+
