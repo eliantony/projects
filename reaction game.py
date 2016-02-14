@@ -3,10 +3,10 @@ import random
 import time
 
 
-left_name = input ("Left Player's Name Is")
-right_name = input ("Right Player's Name Is")
+# left_name = input('Left Players Name Is:')
+# right_name = input("Right Player's Name Is")
 
-names = [left_name, right_name]
+# names = [left_name, right_name]
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -34,3 +34,4 @@ while True:
         break
 
 GPIO.cleanup()
+
