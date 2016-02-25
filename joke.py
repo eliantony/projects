@@ -2,7 +2,6 @@ import time
 from sense_hat import SenseHat
 sense = SenseHat()
 
-sense.set_rotation(180)
 speed = 0.05
 sense.show_message("Knock Knock", scroll_speed = speed)
 time.sleep(2)
