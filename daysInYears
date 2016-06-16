@@ -1,0 +1,2 @@
+#!/bin/sh
+echo In $1 years there are $(($1*365)) days.
