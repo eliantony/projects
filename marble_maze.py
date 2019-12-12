@@ -56,10 +56,9 @@ while game_over==False:
 		l += 1
 		if l == 5:
 			while True:
-			sense.show_message("You Won All Five Levels!")
-			face = [[b,g,b,b,b,g,b]
-				[
-		sense.show_message("You Won! Level" + int l)
+                            sense.show_message("You Won All Five Levels!")
+                            face = [[b,g,b,b,b,g,b]]
+		sense.show_message("You Won! Level" + str(l))
 	sleep(0.05)
 	maze[y][x] = w
 	sense.set_pixels(sum(maze,[]))
