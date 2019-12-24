@@ -1,43 +1,37 @@
-from sense_hat import SenseHat
-import time
-import random
+import time as t
+import random as r
 
-sense = SenseHat()
+print("Welcome to the Math Quiz!")
 
-def smile():
-    sense.set_pixel(2, 2, [0, 0, 255])
-    sense.set_pixel(4, 2, [0, 0, 255])
-    sense.set_pixel(3, 4, [255, 0, 0])
-    sense.set_pixel(1, 5, [255, 0, 0])
-    sense.set_pixel(2, 6, [255, 0, 0])
-    sense.set_pixel(3, 6, [255, 0, 0])
-    sense.set_pixel(4, 6, [255, 0, 0])
-    sense.set_pixel(5, 5, [255, 0, 0])
-    time.sleep(2)
-    sense.clear()
-    time.sleep(1.5)
+operator = input("Choose an Operator: ")
+minrange = input("Great! Now choose a Minimum for the range: ")
+maxrange = input("and the Maximum: ")
+print("\nGood! Now I am going to give you five math questions\nwith the operator you put in and in the\nrange you specified.\n")
 
-def sad():
-    sense.set_pixel(2, 2, [0, 0, 255])
-    sense.set_pixel(4, 2, [0, 0, 255])
-    sense.set_pixel(3, 4, [255, 0, 0])
-    sense.set_pixel(1, 7, [255, 0, 0])
-    sense.set_pixel(2, 6, [255, 0, 0])
-    sense.set_pixel(3, 6, [255, 0, 0])
-    sense.set_pixel(4, 6, [255, 0, 0])
-    sense.set_pixel(5, 7, [255, 0, 0])
-    time.sleep(2)
-    sense.clear()
-    time.sleep(1.5)
+minrange = (int (minrange))
+maxrange = (int (maxrange))
+s = 0
 
-r = random.randint(0, 10)  
-l = random.randint(0, 10)
-correct = r+l
-sense.show_message(str(r) + "+" + str(l) + "=?")
-ans = input()
-n = int(ans)
-if(n == correct):
-    smile()
-else:
-    sad()
+if (str (operator)) == "*":
+    for i in range(1, 6):
+        x = r.randint(minrange, maxrange)
+        y = r.randint(minrange, maxrange)
 
+        j =  input("Question " + (str(i)) + "\n" + (str(x)) + "*" + (str(y)) + ": ")
+        print((str(x*y)))
+        if j == str(x*y):
+            print("Correct!\n")
+            s = s + 1
+        else:
+            print("Wrong!\n")
+
+    if s == 5:
+        print("\nYou got 'em all correct! Absolutely Outstanding!!")
+    elif s == 4:
+        print("\nYou got 4/5 correct! Excellent!")
+    elif s == 3:
+        print("\nYou only got 3/5 correct. Try harder next time.")
+    elif s == 0:
+        print("\nGo back to Kindergarten right now! You got none correct!!!")
+    else:
+        print("\nYou only got " + (str(s)) + "/5 correct. Practice those tables will ya?!")
