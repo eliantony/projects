@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+print("Hello ascii")
+#for i in range(0, 256):
+#	print(str(i) + "\t"  + chr(i))
+print('\u03A3')	
