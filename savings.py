@@ -2,7 +2,6 @@ import time
 f = open('savings.txt', 'r+')
 a = f.read()
 f.seek(0)
-a = str(a)
 message = 'There is currently $' + a + ' in your savings account. Would you like to change the amount inside?[Y/n]'
 c = input(message)
 a = int(a)
